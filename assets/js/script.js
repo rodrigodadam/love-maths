@@ -67,10 +67,18 @@ function checkAnswer() {
     let isCorrect = userAnswer === calculatedAnswer[0];
 
     if (isCorrect) {
-        alert("Hey! You got it right! :D");
+        swal({
+            title: "Good job!",
+            text: "You are a Star!",
+            icon: "success",
+          });
         incrementScore();
     } else {
-        alert(`Awwww.... you answered ${userAnswer}. The correct answer was ${calculatedAnswer[0]}!`);
+        swal({
+            title: "Nhaaaaa!",
+            text: `Awwww.... you answered ${userAnswer}. The correct answer was ${calculatedAnswer[0]}!`, 
+            icon: "error",
+          });
         incrementWrongAnswer();
     }
 
